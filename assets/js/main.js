@@ -32,15 +32,16 @@ function scrollActive() {
     const sectionHeight = current.offsetHeight
     const sectionTop = current.offsetTop - 50
     sectionId = current.getAttribute('id')
+    const activeLink = document.querySelector(
+      '.nav__menu a[href*=' + sectionId + ']'
+    )
 
     if (
       scrollY > sectionTop &&
       scrollY <= sectionTop + sectionHeight
     ) {
-      document
-        .querySelector('.nav__menu a[href*=' + sectionId + ']')
-        .classList.add('active-link')
-    } else {
+      activeLink.classList.add('active-link')
+    } else if (activeLink != null) {
       document
         .querySelector('.nav__menu a[href*=' + sectionId + ']')
         .classList.remove('active-link')
