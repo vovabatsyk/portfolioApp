@@ -291,6 +291,10 @@ img {
 }
 
 /*========== PROFILE ==========*/
+.profile__description {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
 
 /*========== EDUCATION AND EXPERIENCE ==========*/
 
