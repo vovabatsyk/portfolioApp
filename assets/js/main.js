@@ -25,7 +25,7 @@ navLink.forEach((n) => n.addEventListener('click', linkAction))
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
-function scrollActive() {
+const scrollActive = () => {
   const scrollY = window.pageYOffset
 
   sections.forEach((current) => {
@@ -49,3 +49,13 @@ function scrollActive() {
   })
 }
 window.addEventListener('scroll', scrollActive)
+
+/*======================== SHOW SCROLL TOP ================*/
+const scrollTop = () => {
+  const scrollTop = document.getElementById('scroll-top')
+  this.scrollY >= 200
+    ? scrollTop.classList.add('show-scroll')
+    : scrollTop.classList.remove('show-scroll')
+}
+
+window.addEventListener('scroll', scrollTop)
