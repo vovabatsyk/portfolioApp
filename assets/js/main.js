@@ -95,3 +95,35 @@ themeButton.addEventListener('click', () => {
   localStorage.setItem('selected-theme', getCurrentTheme())
   localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+/*==================REDUCE THE SIZE AND PRINT ON AN a4 */
+const scaleCv = () => {
+  document.body.classList.add('scale-cv')
+}
+
+/*==================REMOVE THE SIZE WHEN THE CV IS DOWNLOADED======================= */
+const removeScaleCv = () => {
+  document.body.classList.remove('scale-cv')
+}
+
+/*================== GENERATE PDF ======================== */
+let resumeButton = document.getElementById('resume-button')
+let areaCv = document.getElementById('area-cv')
+
+let opt = {
+  margin:       0,
+  filename:     'VBatsyk_CV.pdf',
+  image:        { type: 'jpeg', quality: 0.98 },
+  html2canvas:  { scale: 4 },
+  jsPDF:        { format: 'a4', orientation: 'portrait' }
+};
+
+function generateResume() {
+  html2pdf().set(opt).from(areaCv).save();
+
+}
+
+resumeButton.addEventListener('click', () => {
+  scaleCv()
+  generateResume()
+})
