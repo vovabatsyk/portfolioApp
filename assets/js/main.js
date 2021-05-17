@@ -125,5 +125,5 @@ function generateResume() {
 resumeButton.addEventListener('click', () => {
   scaleCv()
   generateResume()
-  setTimeout(removeScaleCv(), 5000)
+  setTimeout(removeScaleCv, 5000)
 })
